@@ -1,14 +1,19 @@
 # primitives components
 
 [] Checkbox
+
 [] Collapsible
+
 [] CryptoCurrencyIcon
+
 [] Dialog
+
 [] Input
+
 [] Switch
 
-[] Toast context provider (maybe need remove into biz components)
-[x] Tooltip hooks folder (maybe need remove into biz components)
+[] Toast context provider
+[x] Tooltip hooks folder
 
 # hooks
 
@@ -69,6 +74,13 @@
 # api
 
 # kit
+
+## store
+
+[] toast
+[] cart
+[] client
+[] kit
 
 # Others
 

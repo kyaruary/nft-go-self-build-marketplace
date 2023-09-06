@@ -11,6 +11,7 @@ import { getDefaultWallets } from '@rainbow-me/rainbowkit'
 import { darkTheme, globalReset } from '@/styled'
 import { GetStaticProps } from 'next'
 import { WalletProvider, TooltipProvider } from '@/providers'
+import { ToastProvider } from '@/go-trading-kit'
 
 const { chains, publicClient } = configureChains([mainnet], [publicProvider()])
 
@@ -48,7 +49,9 @@ export default function App(props: AppProps) {
         defaultTheme={defaultTheme}
       >
         <TooltipProvider>
-          <Component {...pageProps} />
+          <ToastProvider>
+            <Component {...pageProps} />
+          </ToastProvider>
         </TooltipProvider>
       </WalletProvider>
     </ThemeProvider>
