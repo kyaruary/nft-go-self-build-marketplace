@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "strictNullChecks": true,
+    "noImplicitAny": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "jsx": "preserve",
+    "baseUrl": ".",
+    "incremental": true,
+    "paths": {
+      "@/gotrading-kit": ["./go-trading-kit/index.ts"],
+      "@/utils/*": ["./utils/*"],
+      "@/primitives": ["./components/primitives/index.ts"],
+      "@/styled": ["./style/index.ts"],
+      "@/hooks": ["./hooks/index.ts"],
+      "@/store": ["./store/index.ts"],
+      "@/types": ["./types/index.ts"],
+      "@/components": ["./components/index.ts"],
+      "@/providers": ["./providers/index.ts"]
+    }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
+}
