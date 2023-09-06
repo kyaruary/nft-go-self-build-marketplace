@@ -12,6 +12,7 @@ import { darkTheme, globalReset } from '@/styled'
 import { GetStaticProps } from 'next'
 import { WalletProvider, TooltipProvider } from '@/providers'
 import { ToastProvider } from '@/go-trading-kit'
+import { HotkeysProvider } from 'react-hotkeys-hook'
 
 const { chains, publicClient } = configureChains([mainnet], [publicProvider()])
 
@@ -35,26 +36,28 @@ export default function App(props: AppProps) {
   const defaultTheme = 'dark'
 
   return (
-    <ThemeProvider
-      attribute="class"
-      defaultTheme={defaultTheme}
-      value={{
-        dark: darkTheme.className,
-        light: 'light',
-      }}
-    >
-      <WalletProvider
-        config={wagmiConfig}
-        chains={chains}
+    <HotkeysProvider>
+      <ThemeProvider
+        attribute="class"
         defaultTheme={defaultTheme}
+        value={{
+          dark: darkTheme.className,
+          light: 'light',
+        }}
       >
-        <TooltipProvider>
-          <ToastProvider>
-            <Component {...pageProps} />
-          </ToastProvider>
-        </TooltipProvider>
-      </WalletProvider>
-    </ThemeProvider>
+        <WalletProvider
+          config={wagmiConfig}
+          chains={chains}
+          defaultTheme={defaultTheme}
+        >
+          <TooltipProvider>
+            <ToastProvider>
+              <Component {...pageProps} />
+            </ToastProvider>
+          </TooltipProvider>
+        </WalletProvider>
+      </ThemeProvider>
+    </HotkeysProvider>
   )
 }
 export const getStaticProps: GetStaticProps<{}> = async () => {

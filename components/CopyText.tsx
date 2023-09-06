@@ -1,6 +1,5 @@
 import { Box, Text, Tooltip } from '@/primitives'
 import { FC, ReactNode, useState } from 'react'
-// TODO: use @styled
 import { CSS } from '@stitches/react'
 import { useCopyToClipboard } from 'usehooks-ts'
 

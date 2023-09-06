@@ -1,11 +1,9 @@
-import { FC, ReactNode, useContext } from 'react'
+import { ReactNode } from 'react'
 import { keyframes, styled } from '@/styled'
 import * as ToastPrimitive from '@radix-ui/react-toast'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircleCheck, faCircleXmark } from '@fortawesome/free-solid-svg-icons'
 import { Box, Flex } from '@/primitives'
-
-import { ToastContext } from '../store/contexts/toast'
 
 const VIEWPORT_PADDING = 25
 
@@ -43,8 +41,11 @@ const ToastRoot = styled(ToastPrimitive.Root, {
   '&[data-state="closed"]:first-child': {
     animation: `${hide} 100ms ease-in`,
   },
+
+  // for user gesture
   '&[data-swipe="move"]': {
-    transform: 'translateX(var(--radix-toast-swipe-move-x))',
+    transform: 'translateX(var(--radix-toast-swipe-move-x)) ',
+    transition: 'transform 200ms ease-out',
   },
   '&[data-swipe="cancel"]': {
     transform: 'translateX(0)',
@@ -70,47 +71,45 @@ const ToastDescription = styled(ToastPrimitive.Description, {
 
 const ToastAction = styled(ToastPrimitive.Action, {})
 
-type Props = {
-  id?: string
+export type ToastType = {
+  id: string
   title?: string
   description?: string
   action?: ReactNode
   status?: 'success' | 'error'
 }
 
-const Toast: FC<Props> = ({ id, title, description, action, status }) => {
-  const { toasts, setToasts } = useContext(ToastContext)
+interface Props extends ToastType {
+  onEnd?: (id: string) => void
+}
+
+function Toast(props: Props) {
+  const { id, title, description, action, status, onEnd } = props
+
+  const handleOpenChange = (open: boolean) => {
+    if (!open) {
+      onEnd?.(id)
+    }
+  }
 
   return (
-    <>
-      <ToastRoot
-        key={title}
-        onOpenChange={(open) => {
-          if (!open) {
-            setTimeout(
-              () => setToasts?.(toasts.filter((toast) => toast.id != id)),
-              100
-            )
-          }
-        }}
-      >
-        {status !== undefined ? (
-          <Box css={{ color: status === 'error' ? '$red10' : '$green10' }}>
-            <FontAwesomeIcon
-              icon={status === 'error' ? faCircleXmark : faCircleCheck}
-              width={16}
-            />
-          </Box>
-        ) : null}
-        <Flex direction="column">
-          <ToastTitle>{title}</ToastTitle>
-          <ToastDescription>{description}</ToastDescription>
-          <ToastAction asChild altText="Toast action">
-            {action}
-          </ToastAction>
-        </Flex>
-      </ToastRoot>
-    </>
+    <ToastRoot key={title} onOpenChange={handleOpenChange}>
+      {status !== undefined ? (
+        <Box css={{ color: status === 'error' ? '$red10' : '$green10' }}>
+          <FontAwesomeIcon
+            icon={status === 'error' ? faCircleXmark : faCircleCheck}
+            width={16}
+          />
+        </Box>
+      ) : null}
+      <Flex direction="column">
+        <ToastTitle>{title}</ToastTitle>
+        <ToastDescription>{description}</ToastDescription>
+        <ToastAction asChild altText="Toast action">
+          {action}
+        </ToastAction>
+      </Flex>
+    </ToastRoot>
   )
 }
 

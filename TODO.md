@@ -12,7 +12,7 @@
 
 [] Switch
 
-[] Toast context provider
+[x] Toast context provider
 [x] Tooltip hooks folder
 
 # hooks
@@ -41,11 +41,11 @@
 [] AnalyticsProvider
 [] ErrorTrackingProvider
 [] ReferralContextProvider
-[] HotkeysProvider
+[x] HotkeysProvider
 [] KitProvider
 [] CartProvider
-[] TooltipProvider
-[] ToastContextProvider
+[x] TooltipProvider from app
+[x] ToastProvider from kit
 
 ## chains
 
@@ -69,7 +69,7 @@
 
 ## Common
 
-[] CopyText
+[x] CopyText
 
 # api
 
