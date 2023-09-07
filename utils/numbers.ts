@@ -157,4 +157,10 @@ function formatBN(
   }
 }
 
-export { formatDollar, formatBN, formatNumber }
+function toFixed(num: number, fixed: number) {
+  const re = new RegExp('^-?\\d+(?:.\\d{0,' + (fixed || -1) + '})?')
+  const fixedNum = num.toString().match(re)
+  return fixedNum ? fixedNum[0] : num
+}
+
+export { formatDollar, formatBN, formatNumber,toFixed }

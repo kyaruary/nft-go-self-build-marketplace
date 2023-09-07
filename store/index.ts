@@ -5,7 +5,7 @@ export { ChainContext } from './contexts/chain'
 
 export { CartProvider } from './providers/cart'
 export { GoTradingClientProvider } from './providers/client'
-export { GoTradingKitProvider } from './providers/kit'
+export { GoTradingKitProvider } from './providers/trading-kit'
 export { TooltipProvider } from './providers/tooltip'
 export { WalletProvider } from './providers/wallet'
 export { ToastProvider } from './providers/toast'

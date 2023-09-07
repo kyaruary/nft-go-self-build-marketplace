@@ -6,6 +6,9 @@ import { zeroAddress } from 'viem'
 type FormatCryptoCurrencyProps = {
   logoHeight?: number
   address?: string
+  symbol?: string
+  logoWidth?: number
+  chainId?: string
 }
 
 type Props = ComponentProps<typeof FormatCrypto> & FormatCryptoCurrencyProps
@@ -18,6 +21,7 @@ const FormatCryptoCurrency: FC<Props> = ({
   textStyle,
   css,
   decimals,
+  logoWidth,
 }) => {
   return (
     <FormatCrypto
@@ -27,7 +31,10 @@ const FormatCryptoCurrency: FC<Props> = ({
       maximumFractionDigits={maximumFractionDigits}
       decimals={decimals}
     >
-      <CryptoCurrencyIcon css={{ height: logoHeight }} address={address} />
+      <CryptoCurrencyIcon
+        css={{ height: logoHeight, logoWidth }}
+        address={address}
+      />
     </FormatCrypto>
   )
 }

@@ -14,10 +14,10 @@ import {
   violet,
   violetA,
   indigo,
-} from '@radix-ui/colors'
-import { createStitches } from '@stitches/react'
-import type * as Stitches from '@stitches/react'
-import { reset } from '@/utils/css/reset'
+} from '@radix-ui/colors';
+import { createStitches } from '@stitches/react';
+import type * as Stitches from '@stitches/react';
+import { reset } from '@/utils/css/reset';
 // import { Inter } from '@next/font/google'
 
 // const inter = Inter({
@@ -118,6 +118,8 @@ export const {
       dropdownBg: 'white',
       sidebarOverlay: 'black',
       textColor: '#000000',
+      overlayBackground: 'rgba(0,0,0,0.48)',
+      contentBackground: '#fff',
     },
     space: {
       1: '4px',
@@ -209,11 +211,11 @@ export const {
       if (value === 'full') {
         return {
           gridColumn: '1 / -1',
-        }
+        };
       }
       return {
         gridColumn: `span ${value} / span ${value}`,
-      }
+      };
     },
   },
   media: {
@@ -239,9 +241,9 @@ export const {
     dark: '(prefers-color-scheme: dark)',
     light: '(prefers-color-scheme: light)',
   },
-})
+});
 
-export const globalReset = globalCss(reset)
+export const globalReset = globalCss(reset);
 
 export const darkTheme = createTheme({
   colors: {
@@ -311,4 +313,4 @@ export const darkTheme = createTheme({
     sidebarOverlay: 'black',
     textColor: '#FFFFFF',
   },
-})
+});

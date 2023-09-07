@@ -67,6 +67,12 @@ export default styled('span', {
       },
     },
     color: {
+      accent: {
+        color: '$accentText',
+      },
+      button: {
+        color: '$buttonTextColor',
+      },
       subtle: {
         color: '$gray11',
       },

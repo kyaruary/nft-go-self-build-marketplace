@@ -1,4 +1,4 @@
-import { styled } from '@/styled'
+import { styled } from '@/styled';
 
 const Button = styled('button', {
   outline: 'none',
@@ -9,6 +9,7 @@ const Button = styled('button', {
   gap: '$space$2',
   display: 'inline-flex',
   alignItems: 'center',
+  justifyContent: 'center',
   lineHeight: '20px',
   $$focusColor: '$colors$gray12',
   '&:focus-visible': {
@@ -141,6 +142,6 @@ const Button = styled('button', {
     corners: 'rounded',
     size: 'medium',
   },
-})
+});
 
-export default Button
+export default Button;
