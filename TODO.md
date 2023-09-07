@@ -74,9 +74,12 @@
 
 # api
 
+fetch data from nftgo data-api
 ...more than 20 items
 
 # kit
+
+includes trading modals & cart
 
 ## store
 

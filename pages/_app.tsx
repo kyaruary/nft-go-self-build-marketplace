@@ -40,10 +40,10 @@ export default function App(props: AppProps) {
 
   globalReset()
 
-  // from ssr
+  // should from ssr
   const defaultTheme = 'dark'
 
-  // from ssr
+  // should from ssr
   const defaultChain = 'ethereum'
 
   return (
