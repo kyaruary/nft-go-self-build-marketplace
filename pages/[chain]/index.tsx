@@ -1,14 +1,14 @@
-import { Layout } from '@/components'
-import { Text, Tooltip } from '@/primitives'
 import { NextPage } from 'next'
-import { useToastStore } from '@/go-trading-kit'
+import { useToastStore } from '@/hooks'
 import { useCallback, useRef } from 'react'
 import { useHotkeys } from 'react-hotkeys-hook'
+import { ChainHomepage } from '@/src/homepage'
 
 export default function IndexPage(props: NextPage<unknown>) {
   const { addToast } = useToastStore()
 
   const count = useRef(0)
+
   const handleClick = useCallback(() => {
     addToast?.({
       title: 'Could not accept offer' + count.current,
@@ -19,13 +19,5 @@ export default function IndexPage(props: NextPage<unknown>) {
 
   useHotkeys('meta+k', handleClick)
 
-  return (
-    <Layout>
-      <Text>1234</Text>
-      <Tooltip content="tooltip">
-        <span>1234</span>
-      </Tooltip>
-      <button onClick={handleClick}>add Toast</button>
-    </Layout>
-  )
+  return <ChainHomepage />
 }

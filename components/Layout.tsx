@@ -1,4 +1,4 @@
-import { Box } from 'components/primitives'
+import { Box } from '@/primitives'
 import { PropsWithChildren } from 'react'
 import Navbar from './navbar'
 
@@ -14,7 +14,19 @@ export default function Layout(props: PropsWithChildren<unknown>) {
     >
       <Box css={{ maxWidth: 1920, mx: 'auto' }}>
         <Navbar />
-        <main>{props.children}</main>
+        <main>
+          <Box
+            css={{
+              p: 24,
+              height: '100%',
+              '@bp800': {
+                p: '$6',
+              },
+            }}
+          >
+            {props.children}
+          </Box>
+        </main>
       </Box>
     </Box>
   )

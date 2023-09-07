@@ -1,5 +1,3 @@
-// import { Config } from '@nftgo/gotrading'
-
 import { PropsWithChildren } from 'react'
 import { GoTradingSDKClientContext } from '../contexts/client'
 import { useGoTradingClientService } from '../services/client'
@@ -15,7 +13,7 @@ type Props = PropsWithChildren<GoTradingClientProviderProps>
 export function GoTradingClientProvider(props: Props) {
   const { children, options } = props
 
-  const client = useGoTradingClientService(options)
+  const client = useGoTradingClientService({} as any)
 
   return (
     <GoTradingSDKClientContext.Provider value={client}>

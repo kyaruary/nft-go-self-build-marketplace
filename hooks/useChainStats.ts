@@ -4,10 +4,11 @@
 // import { ChainContext } from 'context/ChainContextProvider'
 // import { useContext } from 'react'
 import useSWR from 'swr'
+import { useChain } from './use-chain'
 
 export default () => {
   // const client = useReservoirClient()
-  // const { chain } = useContext(ChainContext)
+  const { chain } = useChain()
 
   // const path = `${chain?.reservoirBaseUrl}/chain/stats/v1`
 

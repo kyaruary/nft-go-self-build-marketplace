@@ -10,9 +10,16 @@ import { getDefaultWallets } from '@rainbow-me/rainbowkit'
 
 import { darkTheme, globalReset } from '@/styled'
 import { GetStaticProps } from 'next'
-import { WalletProvider, TooltipProvider } from '@/providers'
-import { ToastProvider, CartProvider } from '@/go-trading-kit'
+import {
+  WalletProvider,
+  TooltipProvider,
+  ToastProvider,
+  CartProvider,
+  ChainProvider,
+} from '@/store'
+
 import { HotkeysProvider } from 'react-hotkeys-hook'
+import { Layout } from '@/components'
 
 const { chains, publicClient } = configureChains([mainnet], [publicProvider()])
 
@@ -33,32 +40,40 @@ export default function App(props: AppProps) {
 
   globalReset()
 
+  // from ssr
   const defaultTheme = 'dark'
+
+  // from ssr
+  const defaultChain = 'ethereum'
 
   return (
     <HotkeysProvider>
-      <ThemeProvider
-        attribute="class"
-        defaultTheme={defaultTheme}
-        value={{
-          dark: darkTheme.className,
-          light: 'light',
-        }}
-      >
-        <WalletProvider
-          config={wagmiConfig}
-          chains={chains}
+      <ChainProvider chain={defaultChain}>
+        <ThemeProvider
+          attribute="class"
           defaultTheme={defaultTheme}
+          value={{
+            dark: darkTheme.className,
+            light: 'light',
+          }}
         >
-          <CartProvider>
-            <TooltipProvider>
-              <ToastProvider>
-                <Component {...pageProps} />
-              </ToastProvider>
-            </TooltipProvider>
-          </CartProvider>
-        </WalletProvider>
-      </ThemeProvider>
+          <WalletProvider
+            config={wagmiConfig}
+            chains={chains}
+            defaultTheme={defaultTheme}
+          >
+            <CartProvider>
+              <TooltipProvider>
+                <ToastProvider>
+                  <Layout>
+                    <Component {...pageProps} />
+                  </Layout>
+                </ToastProvider>
+              </TooltipProvider>
+            </CartProvider>
+          </WalletProvider>
+        </ThemeProvider>
+      </ChainProvider>
     </HotkeysProvider>
   )
 }

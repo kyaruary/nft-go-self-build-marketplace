@@ -129,5 +129,13 @@ const Dialog = forwardRef<
     )
   }
 )
+const StyledAnimatedContent = styled(AnimatedContent, {})
 
-export { Dialog, Content, AnimatedContent, Overlay, AnimatedOverlay }
+export {
+  Dialog,
+  Content,
+  AnimatedContent,
+  Overlay,
+  AnimatedOverlay,
+  StyledAnimatedContent,
+}

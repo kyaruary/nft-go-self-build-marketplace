@@ -8,14 +8,17 @@ const StyledToggleGroupRoot = styled(ToggleGroupRoot, {
   borderRadius: 8,
   overflow: 'hidden',
   display: 'flex',
-  gap: 1,
+  gap: 0,
+  borderColor: '$panelBorder',
+  height: 55,
+  borderWidth: 1,
 })
 
 const StyledToggleGroupItem = styled(ToggleGroupItem, {
-  background: '$gray3',
+  background: '$panelBg',
   color: '$gray12',
   p: '$3',
-  '&[data-state=on]': { backgroundColor: '$primary5' },
+  '&[data-state=on]': { backgroundColor: '$panelActive' },
 })
 
 export {

@@ -4,7 +4,7 @@ import {
   lightTheme,
 } from '@rainbow-me/rainbowkit'
 import { useTheme } from 'next-themes'
-import { PropsWithChildren, useEffect, useMemo, useState } from 'react'
+import { PropsWithChildren, useEffect, useState } from 'react'
 import { WagmiConfig } from 'wagmi'
 
 interface Props {

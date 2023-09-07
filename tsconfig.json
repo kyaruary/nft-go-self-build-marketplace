@@ -17,18 +17,17 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "jsx": "preserve",
-    "baseUrl": ".",
     "incremental": true,
     "paths": {
-      "@/go-trading-kit": ["go-trading-kit/index.ts"],
-      "@/utils/*": ["utils/*"],
-      "@/primitives": ["components/primitives/index.ts"],
-      "@/styled": ["style/index.ts"],
-      "@/hooks": ["hooks/index.ts"],
-      "@/store": ["store/index.ts"],
-      "@/types": ["types/index.ts"],
-      "@/components": ["components/index.ts"],
-      "@/providers": ["providers/index.ts"]
+      "@/utils/*": ["./utils/*"],
+      "@/primitives": ["./components/primitives/index.ts"],
+      "@/styled": ["./style/index.ts"],
+      "@/hooks": ["./hooks/index.ts"],
+      "@/store": ["./store/index.ts"],
+      "@/types": ["./types/index.ts"],
+      "@/components": ["./components/index.ts"],
+      "@/data-api": ["./data-api/index.ts"],
+      "@/src/*": ["./src/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

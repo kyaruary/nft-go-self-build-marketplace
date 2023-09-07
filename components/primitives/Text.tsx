@@ -51,6 +51,20 @@ export default styled('span', {
         fontWeight: 400,
         fontSize: 12,
       },
+      tiny: {
+        fontWeight: 400,
+        fontSize: 12,
+      },
+      title: {
+        fontWeight: 600,
+        fontSize: 28,
+        lineHeight: '40px',
+      },
+      subtitle: {
+        fontWeight: 600,
+        fontSize: 20,
+        lineHeight: '28px',
+      },
     },
     color: {
       subtle: {
@@ -58,6 +72,12 @@ export default styled('span', {
       },
       error: {
         color: '$red11',
+      },
+      success: {
+        color: '$green11',
+      },
+      base: {
+        color: '$gray12',
       },
     },
     italic: {
