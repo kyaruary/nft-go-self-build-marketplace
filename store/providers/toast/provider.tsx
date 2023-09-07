@@ -1,8 +1,8 @@
 import { PropsWithChildren, useCallback, useRef } from 'react'
-import { useToastService } from '../services/toast'
-import { ToastContext } from '../contexts/toast'
+import { useToastService } from '../../services/toast'
+import { ToastContext } from '../../contexts/toast'
 import { Provider as PrimitivesToastProvider } from '@radix-ui/react-toast'
-import Toast, { ToastViewport } from '../../components/Toast'
+import Toast, { ToastViewport } from './primitives'
 
 export function ToastProvider(props: PropsWithChildren<unknown>) {
   const service = useToastService()
