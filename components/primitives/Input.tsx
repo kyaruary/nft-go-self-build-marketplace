@@ -6,7 +6,6 @@ import {
   forwardRef,
   ReactNode,
 } from 'react'
-// FIXME: use @styled
 import { CSS } from '@stitches/react'
 
 const StyledInput = styled('input', {

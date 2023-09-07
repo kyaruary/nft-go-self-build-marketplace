@@ -11,7 +11,7 @@ import { getDefaultWallets } from '@rainbow-me/rainbowkit'
 import { darkTheme, globalReset } from '@/styled'
 import { GetStaticProps } from 'next'
 import { WalletProvider, TooltipProvider } from '@/providers'
-import { ToastProvider } from '@/go-trading-kit'
+import { ToastProvider, CartProvider } from '@/go-trading-kit'
 import { HotkeysProvider } from 'react-hotkeys-hook'
 
 const { chains, publicClient } = configureChains([mainnet], [publicProvider()])
@@ -50,11 +50,13 @@ export default function App(props: AppProps) {
           chains={chains}
           defaultTheme={defaultTheme}
         >
-          <TooltipProvider>
-            <ToastProvider>
-              <Component {...pageProps} />
-            </ToastProvider>
-          </TooltipProvider>
+          <CartProvider>
+            <TooltipProvider>
+              <ToastProvider>
+                <Component {...pageProps} />
+              </ToastProvider>
+            </TooltipProvider>
+          </CartProvider>
         </WalletProvider>
       </ThemeProvider>
     </HotkeysProvider>

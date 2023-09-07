@@ -1,5 +1,4 @@
-// FIXME: use @style
-import { keyframes, styled } from '@stitches/react'
+import { keyframes, styled } from '@/styled'
 import * as CollapsiblePrimitive from '@radix-ui/react-collapsible'
 import {
   ComponentPropsWithoutRef,

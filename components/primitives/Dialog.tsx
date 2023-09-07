@@ -1,5 +1,4 @@
-// FIXME: use @styled
-import { styled } from '@stitches/react'
+import { styled } from '@/styled'
 import * as DialogPrimitive from '@radix-ui/react-dialog'
 import {
   ComponentPropsWithoutRef,

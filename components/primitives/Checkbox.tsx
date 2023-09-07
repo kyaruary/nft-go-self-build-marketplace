@@ -1,5 +1,4 @@
-// FIXME: use @style
-import { CSS, styled } from '@stitches/react'
+import { styled } from '@/styled'
 import * as CheckboxPrimitive from '@radix-ui/react-checkbox'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheck } from '@fortawesome/free-solid-svg-icons'

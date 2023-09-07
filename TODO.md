@@ -1,16 +1,16 @@
 # primitives components
 
-[] Checkbox
+[x] Checkbox
 
-[] Collapsible
+[x] Collapsible
 
 [] CryptoCurrencyIcon
 
-[] Dialog
+[x] Dialog
 
-[] Input
+[x] Input
 
-[] Switch
+[x] Switch
 
 [x] Toast context provider
 [x] Tooltip hooks folder
@@ -43,7 +43,7 @@
 [] ReferralContextProvider
 [x] HotkeysProvider
 [] KitProvider
-[] CartProvider
+[] CartProvider (now has a template)
 [x] TooltipProvider from app
 [x] ToastProvider from kit
 
@@ -66,6 +66,7 @@
 [] HamburgerMenu
 [] CartButton
 [] Wallet
+[] ThemeSwitcher
 
 ## Common
 
@@ -77,7 +78,7 @@
 
 ## store
 
-[] toast
+[x] toast
 [] cart
 [] client
 [] kit

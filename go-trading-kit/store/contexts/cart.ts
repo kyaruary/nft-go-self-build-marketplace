@@ -1,5 +1,4 @@
 import { createContext } from 'react'
+import { CartStore } from '../services/cart'
 
-export const CartContext = createContext<ReturnType<typeof cartStore> | null>(
-  null
-)
+export const CartContext = createContext<CartStore | null>(null)
