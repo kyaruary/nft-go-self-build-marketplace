@@ -11,7 +11,7 @@ import { useAccount } from 'wagmi';
 import { useCartPopper } from './use-cart-popper';
 import { Content } from './content';
 import { Loader } from './loader';
-import { PoweredBy } from './power-by';
+import { PoweredBy } from '../primitives/power-by';
 import { Clear } from './clear';
 import { CONTENT_OFFSET } from './constants';
 import { Close } from './close';

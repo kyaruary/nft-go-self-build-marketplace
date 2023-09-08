@@ -1,42 +1,24 @@
-import FormatCrypto from './FormatCrypto'
-import React, { FC, ComponentProps } from 'react'
-import CryptoCurrencyIcon from './CryptoCurrencyIcon'
-import { zeroAddress } from 'viem'
+import FormatCrypto from './FormatCrypto';
+import React, { FC, ComponentProps } from 'react';
+import CryptoCurrencyIcon from './CryptoCurrencyIcon';
+import { zeroAddress } from 'viem';
 
 type FormatCryptoCurrencyProps = {
-  logoHeight?: number
-  address?: string
-  symbol?: string
-  logoWidth?: number
-  chainId?: string
-}
+  logoHeight?: number;
+  address?: string;
+  symbol?: string;
+  logoWidth?: number;
+  chainId?: string;
+};
 
-type Props = ComponentProps<typeof FormatCrypto> & FormatCryptoCurrencyProps
+type Props = ComponentProps<typeof FormatCrypto> & FormatCryptoCurrencyProps;
 
-const FormatCryptoCurrency: FC<Props> = ({
-  amount,
-  address = zeroAddress,
-  maximumFractionDigits,
-  logoHeight = 8,
-  textStyle,
-  css,
-  decimals,
-  logoWidth,
-}) => {
+const FormatCryptoCurrency: FC<Props> = ({ amount, address = zeroAddress, maximumFractionDigits, logoHeight = 8, textStyle, css, decimals, logoWidth }) => {
   return (
-    <FormatCrypto
-      css={css}
-      textStyle={textStyle}
-      amount={amount}
-      maximumFractionDigits={maximumFractionDigits}
-      decimals={decimals}
-    >
-      <CryptoCurrencyIcon
-        css={{ height: logoHeight, logoWidth }}
-        address={address}
-      />
+    <FormatCrypto css={css} textStyle={textStyle} amount={amount} maximumFractionDigits={maximumFractionDigits} decimals={decimals}>
+      <CryptoCurrencyIcon css={{ height: logoHeight, logoWidth }} url="https://static.nftgo.io/icon/token/ETH.svg" address={address} />
     </FormatCrypto>
-  )
-}
+  );
+};
 
-export default FormatCryptoCurrency
+export default FormatCryptoCurrency;

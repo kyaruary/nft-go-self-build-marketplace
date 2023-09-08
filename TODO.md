@@ -77,6 +77,14 @@
 fetch data from nftgo data-api
 ...more than 20 items
 
+## asset detail
+
+[] refresh metadata
+[] get token information - base, trait, rarity
+[] get token listings
+[] get token offers
+[] get token activity
+
 # kit
 
 includes trading modals & cart
